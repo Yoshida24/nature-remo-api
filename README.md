@@ -1,7 +1,7 @@
 # nature-remo-api
 
 ## Usage
-Python 3.8.9
+Python 3.10.6
 
 ## Setup
 
@@ -13,14 +13,22 @@ then, write your properties on `.env`.
 
 ## Commands
 
-Power on the aircon
+run locally
 
 ```
-make aircon_on
+-a & source .env & set +a & python3 app/src/main.py <command>
+# e.g. -a & source .env & set +a & python3 app/src/main.py turn_off_aircon
 ```
 
-Pwer off the aircon
+build docker image
 
 ```
-make aircon_off
+make docker_build
+```
+
+run docker conatiner
+
+```bash
+docker run -it nature_remo_api <command> --rm
+# e.g. docker run -it nature_remo_api turn_off_aircon --rm
 ```
